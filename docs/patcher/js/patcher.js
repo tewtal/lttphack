@@ -80,7 +80,7 @@ Vue.component('file-uploader', {
                 console.log("Could not read uploaded file data", err);
                 return;
             }
-    
+            
             /* Strip header if found */
             if(fileData.length % 0x200 !== 0)
             {

@@ -77,10 +77,10 @@ Vue.component('file-uploader', {
             try {
                 fileData = new Uint8Array(await readAsArrayBuffer(this.selectedFile));
             } catch (err) {
-                console.log("Could not read uploaded file data", err);
+                alert("Could not read uploaded file data", err);
                 return;
             }
-            
+
             /* Strip header if found */
             if(fileData.length % 0x200 !== 0)
             {
@@ -96,7 +96,7 @@ Vue.component('file-uploader', {
             try {
                 await localforage.setItem('baseRom' + this.manifest.base.crc, new Blob([fileData]));
             } catch (err) {
-                console.log("Could not store file to localforage:", err);
+                alert("Could not store file to localforage:", err);
                 return;
             }
 

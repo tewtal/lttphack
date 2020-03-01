@@ -119,7 +119,7 @@ Vue.component('file-uploader', {
                             <span class="input-group-text">Select ROM</span>
                         </div>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="selected-file" @change="fileSelected" />
+                            <input type="file" style="text-indent: -999px; cursor: pointer;" class="custom-file-input" id="selected-file" @change="fileSelected" />
                             <label class="custom-file-label" for="selected-file">{{ selectedFile ? selectedFile.name : "" }}</label>
                         </div>
                     </div>
@@ -182,7 +182,7 @@ Vue.component('file-downloader', {
                             <div class="col">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend"><span class="input-group-text">{{ configuration.name }}</span></div>
-                                    <select v-model="options[configuration.id]" class="form-control" :id="configuration.id" >
+                                    <select v-model="options[configuration.id]" class="form-control" style="cursor: pointer;" :id="configuration.id" >
                                         <option v-for="option in configuration.options" :id="option.id" :value="option.id">{{ option.name }}</option>
                                     </select>
                                 </div>
